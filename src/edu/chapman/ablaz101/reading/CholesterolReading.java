@@ -10,4 +10,9 @@ public class CholesterolReading extends Reading {
         this.ldl = ldl;
         this.vldl = vldl;
     }
+
+    @Override
+    public String toString() {
+        return "LDL: " + ldl.value + " " + ldl.units + " ,VLDL: " + vldl.value + " " + vldl.units;
+    }
 }

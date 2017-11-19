@@ -10,15 +10,27 @@ public class Main {
         // This is where the client would make new USB or Windows devices for Diabetes, Blood Pressure or Cholesterol
 
         // Create a factory for Windows devices
-        AbstractFactory factory = AbstractFactory.getFactory(DeviceType.WINDOWS);
+        AbstractFactory winDeviceFactory = AbstractFactory.getFactory(DeviceType.WINDOWS);
 
-        // Create a diabetes device
-        BiometricDevice device = factory.makeDiabetesDevice();
+        // Create a factory for USB devices
+        AbstractFactory usbDeviceFactory = AbstractFactory.getFactory(DeviceType.USB);
+
+        // Create a diabetes device for Windows
+        BiometricDevice device = winDeviceFactory.makeDiabetesDevice();
 
         // Ask the device to get a reading
         device.getReading();
 
         // Ask the device to display the reading
         device.updateView();
+
+        // Create a cholesterol device for USB
+        BiometricDevice device2 = usbDeviceFactory.makeCholesterolDevice();
+
+        // Ask the device to get a reading
+        device2.getReading();
+
+        // Ask the device to display the reading
+        device2.updateView();
     }
 }

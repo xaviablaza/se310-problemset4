@@ -7,6 +7,6 @@ import edu.chapman.ablaz101.reading.Reading;
  */
 public class WindowsUI {
     public void printReading(Reading reading) {
-        System.out.println(reading.toString());
+        System.out.println("Windows: " + reading.toString());
     }
 }
